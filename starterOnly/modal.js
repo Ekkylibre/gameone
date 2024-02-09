@@ -15,6 +15,8 @@ const formData = document.querySelectorAll(".formData");
 /* Add */
 const modalClose = document.querySelector(".close")
 
+const lastData = document.getElementById("last")
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -22,6 +24,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 modalClose.addEventListener("click", function() {
   closeModal();
 });
+
 
 // launch modal form
 function launchModal() {
@@ -32,4 +35,8 @@ function launchModal() {
 function closeModal () {
   modalbg.style.display = "none";
   console.log("La fenêtre/modal est fermée");
+}
+
+function checkForm () {
+  
 }
