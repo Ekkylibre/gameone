@@ -97,7 +97,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: 0px;
   }
 } 
 
@@ -527,3 +527,18 @@ footer {
   }
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.validation-message {
+  display: none;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  transform: translateY(35%);
+  height: 80vh;
+}
