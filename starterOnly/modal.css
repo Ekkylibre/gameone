@@ -322,7 +322,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -527,3 +528,14 @@ footer {
   }
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.validation-message {
+  display: none;
+  text-align: center;
+}
