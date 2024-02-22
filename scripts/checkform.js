@@ -16,13 +16,13 @@ function validate() {
   let selected = false;
 
   // Firstname Check
-  if (firstData.value.trim() === "") {
+  if (firstData.value.trim().length < 2 || !isLetters(firstData.value.trim())) {
     isValid = false;
-    addErrorMessage(firstData, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
+    addErrorMessage(firstData, "Veuillez entrer 2 lettres ou plus pour le champ du prénom.");
   }
 
   // Lastname Check
-  if (lastData.value.trim() === "") {
+  if (lastData.value.trim().length < 2 || !isLetters(lastData.value.trim())) {
     isValid = false;
     addErrorMessage(lastData, "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
   }
@@ -40,7 +40,7 @@ function validate() {
   }
 
   // Number of tournaments Check
-  if (isNaN(quantityData.value) || quantityData.value.trim() === "" || quantityData.value < 0 || quantityData.value > 99) {
+  if (isNaN(quantityData.value) || quantityData.value.trim() === "" || quantityData.value < 0) {
     isValid = false;
     addErrorMessage(quantityData, "Veuillez renseigner un nombre.");
   };
@@ -103,6 +103,10 @@ function removeErrorMessages(inputElements) {
 
 // Function to validate email format
 function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
+}
+
+function isLetters(value) {
+  return /^[a-zA-Z]+$/.test(value);
 }
